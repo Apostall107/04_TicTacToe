@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace _04_TicTacToe
 {
@@ -225,10 +217,50 @@ namespace _04_TicTacToe
 
             #endregion
 
+            #region double lines Wins
+           // //
+           // //  X lines
+           // //
+           // if (_Results[0] != MarkType.Free && (_Results[0] & _Results[2] & _Results[4] & _Results[6] & _Results[8]) == _Results[0])
+           // {
+           //     // Game ends
+           //     _GameEnded = true;
+
+           //     // Highlight winning cells in green
+           //     Button0_0.Background = Button0_2.Background = Button1_1.Background = Button2_0.Background = Button2_2.Background = Brushes.Green;
+           // }
+
+           //// +lines
+
+
+           // if (_Results[1] != MarkType.Free && (_Results[1] & _Results[4] & _Results[7] & _Results[3] & _Results[5]) == _Results[1])
+           // {
+           //     // Game ends
+           //     _GameEnded = true;
+
+           //     // Highlight winning cells in green
+           //     Button0_1.Background = Button1_0.Background = Button1_1.Background = Button1_2.Background = Button2_1.Background = Brushes.Green;
+           // }
+
+           // //
+           // //  Up n Right
+           // //
+           // if (_Results[0] != MarkType.Free && (_Results[0] & _Results[1] & _Results[2] & _Results[5] & _Results[8]) == _Results[0])
+           // {
+           //     // Game ends
+           //     _GameEnded = true;
+
+           //     // Highlight winning cells in green
+           //     Button0_0.Background = Button0_1.Background = Button0_2.Background = Button1_2.Background = Button2_2.Background = Brushes.Green;
+           // }
+
+
+            #endregion
+
             #region No Winners
 
             // Check for no winner and full board
-            if (!_Results.Any(f => f == MarkType.Free))
+            if (!_Results.Any(f => f == MarkType.Free) && _GameEnded != true)
             {
                 _GameEnded = true;
                
